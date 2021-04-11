@@ -1,52 +1,183 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <style>
+            .body{
+            }
 
+            .upper-links{
+                display: grid;
+                justify-items: center;
+                grid-template-columns: repeat(12, 1fr);
+                gap: 10px;
+                grid-auto-rows: 100px;
+                grid-template-areas: "a a a a a a a a b c d e";
+                font-family: arial, sans-serif;
+            }
+            .gmail{
+                padding: 10px 0px 0px 0px;
+                grid-area: b;
+            }
+            .images{
+                padding: 10px 0px 0px 0px;
+                grid-area: c;
+            }
+            #google-waffle{
+                width: auto;
+                height: 30px;
+                grid-area: d;
+                justify-self: right;
+            }
+            .user-icon{
+                height: 30px;
+                width: 30px;
+                background-color: green;
+                color:white;
+                border-radius: 50%;
+                grid-area: e;
+                justify-self: center;
+            }
+            .main-area{
+                display: grid;
+                grid-template-columns:1fr 7fr 1fr;
+                grid-template-rows: 100px 1fr 1fr 1fr;
+                grid-template-areas: 
+                ". . ."
+                ". logo ."
+                ". search-bar ."
+                ". buttons .";
+                font-family: arial, sans-serif;
+            }
+           
+           .logo-header{
+               grid-area: logo;
+               justify-self: center;
+           }
+           #logo{
+            max-width: 275px;
+            height: auto;
+           }
+           .search-bar{
+               grid-area: search-bar;
+               justify-self: center;
+               align-self: center;
+               display:grid;
+               grid-template-columns: repeat(12, 3em);
+           }
+                
+            .search-box{
+                width: 42em;
+                height: 3em;
+                grid-area: 1 / -1;
+                border: 1px solid;
+                border-radius: 25px;
+                border-width: thin;
+                border-color:rgb(234 234 234);
+                box-shadow: none;
+                text-shadow: none;
+                z-index: 3;
+            }
+
+            .magnifying-glass{
+                max-width: 25px;
+                position: relative;
+                left: -2.5em;
+                top: .5em;
+                height: auto;
+            }
+
+            .microphone{
+                max-height: 20px;
+                position: relative;
+                left: 27.5em;
+                top: 0.65em;
+                width: auto;
+            }
+            .two-buttons{
+                grid-area: buttons;
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                grid-template-rows: 1fr 1fr
+                grid-column-gap: .5em;
+                grid-template-areas: 
+                ". search lucky ."
+                ". center center .";
+            }
+            .search{
+                grid-area: search;
+                margin-top: .2em;
+                font-family: arial, sans-serif;
+            }
+            .lucky{
+                grid-area: lucky;
+                margin-top: .2em;
+                font-family: arial, sans-serif;
+            }
+            .button-style{
+                border-radius: 3px;
+                background-color: rgb(247 247 247);
+                padding: 1em;
+                border: none;
+            }
+            .language{
+                margin-top: 1.7em;
+                grid-area: center;
+                align-self: bottom;
+                justify-self: center;
+                font-family: arial, sans-serif;
+            }
+            .footer{
+                display: grid;
+                grid
+                font-family: arial, sans-serif;
+            }
+        </style>
     </head>
     <body>
         
         <header>
             <div class="upper-links">
-                <a href="#">Gmail</a>
-                <a href="#">Images</a>
-                <img class=google-waffle src="images/google-waffle.png" href="#">
-                <a class="user-icon" href="#"></a>
+                <a class="gmail" href="#">Gmail</a>
+                <a class="images" href="#">Images</a>
+                <img id=google-waffle src="images/google-waffle.png" href="#">
+                <a class="user-icon" href="#">A</a>
         </header>
 
-        <h1>
-            <img src= "images/Google-logo.png">
-        </h1>
+        <div class="main-area">
+        <div class="logo-header">
+            <img class="responsive-image" id=logo src= "images/Google-logo.png">
+        </div>
 
-        <div id="searchbar">
-            <img src= "images/magnifying-glass.png">
+        <div class="search-bar">
              <form action= "#">
-                 <input type="text" placeholder="">
+                 <input class="search-box" id="search-box" type="text" placeholder="">
             </form>
-              <img src= "images/microphone.png">
+            <img class="magnifying-glass" src= "images/magnifying-glass.png">
+            <img class="microphone" src= "images/microphone.png">
         </div>
 
-        <div id="two-buttons">
-             <form action= "#">
-                <button type="submit">Google Search</button>
+        <div class="two-buttons">
+             <form class="search" action= "#">
+                <button class="button-style" type="submit">Google Search</button>
              </form>
-             <form action= "#">
-                <button type="submit">I'm Feeling Lucky</button>
+             <form class="lucky" action= "#">
+                <button class="button-style" type="submit">I'm Feeling Lucky</button>
              </form>
+             <div class="language">Google offered in <a href="#">日本語</a></div>
+        </div>
         </div>
 
-        <a>Google offered in <a href="#">日本語</a></a>
-      
-        <footer>
-            <a>Japan</a>
+        <footer class="footer">
+            <a class="country">Japan</a>
 
-            <div id="L-footer-links">
+            <div class="L-footer-links">
                 <a href="#">About</a>
                 <a href="#">Advertising</a>
                 <a href="#">Business</a>
                 <a href="#">How Search works</a>
             </div>
 
-            <div id="R-footer-links">
+            <div class="R-footer-links">
                 <a href="#">Privacy</a>
                 <a href="#">Terms</a>
                 <a href="#">Settings</a>
